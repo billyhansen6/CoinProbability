@@ -1,6 +1,6 @@
-from .Coins_Load_Data import Coins_Load_Data
+from .Coins_Load_Data import CoinsLoadData
 
-class Bayes_Coins():
+class Bayes_Coins(CoinsLoadData):
     """A class for calculating probabilities of getting heads of tails from a collection of two
     different coins.
 
@@ -14,11 +14,14 @@ class Bayes_Coins():
 
     """
 
-    def __init__(self, A_prob=.8, B_prob=.5):
+    def __init__(self, A_prob=.8, B_prob=.5, data=None):
+        if data is None:
+            data = []
+        self.data = data
         self.A_prob = A_prob
         self.B_prob = B_prob
 
-        Coins_Load_Data.__init__(self, self.calculate_A_coins(), self.calculate_B_coins())
+        CoinsLoadData.__init__(self, self.calculate_A_coins(), self.calculate_B_coins())
 
 
 
