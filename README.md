@@ -4,19 +4,15 @@ This project requires no additional installations.
 
 ### Project Motivation
 
-A python package that caclulates probabilities of outcomes from a collection of weighted coins.
+A python package that calculates probabilities of outcomes from a collection of weighted coins.
 
 
 ### File Descriptions
 
 - Coins_Load_Data.py: a class that initializes a coin collection.
-- Coins.py: a class that inherits the default coin collection from Coins_Load_Data, and then can work 
-- Binomialdistribution.py: a class that inherits the read data function from the
-general distribution, and then contains various binomial distribution methods like calculating
-the probability of a specific outcome, and plotting the probabilities of all possible outcomes.
-- init.py: initializes the binomial and gaussian classes.
-- numbers.txt: a sample dataset to test the gaussian distribution classes.
-- numbers_binomial.txt: a sample data-set to test the binomial distribution classes. 
+- Coins.py: a class that inherits the default coin collection from Coins_Load_Data, replaces
+the collection with user defined coins, and then calculates the liklihood of various outcomes.
+- init.py: initializes the Bayes_Coins class.
 - test.py: unit tests to test if the classes are working as expected.
 
 ### How to Interact with this project
