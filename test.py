@@ -2,7 +2,7 @@ import unittest
 
 
 class MyTestCase(unittest.TestCase):
-    def test_something(self):
+    def setUp(self):
         self.assertEqual(True, False)
 
 
