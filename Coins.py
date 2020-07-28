@@ -22,7 +22,7 @@ class Bayes_Coins(CoinsLoadData):
         self.A_prob = A_prob
         self.B_prob = B_prob
 
-        CoinsLoadData.__init__(self, self.calculate_A_coins(), self.calculate_B_coins())
+        CoinsLoadData.__init__(self)
 
     def calculate_A_coins(self):
         """Function that calculates how many A coins are in the collection.
@@ -41,7 +41,8 @@ class Bayes_Coins(CoinsLoadData):
             else:
                 pass
 
-        return "There are {} A coins in the collection.".format(count_A)
+        self.A_count = count_A
+        return count_A
 
     def calculate_B_coins(self):
         """Function that calculates how many B coins are in the collection.
@@ -59,8 +60,8 @@ class Bayes_Coins(CoinsLoadData):
                 count_B += 1
             else:
                 pass
-
-        return "There are {} B coins in the collection.".format(count_B)
+        self.B_count = count_B
+        return count_B
 
     def heads_from_both_coins(self):
         """Function that calculates the probability of both coin A and coin B showing heads on
@@ -72,7 +73,7 @@ class Bayes_Coins(CoinsLoadData):
             float: probability of two straight heads."""
 
         prob = self.A_prob * self.B_prob
-        return """The probability that both an A coin and a B coin come up heads is {}""".format(round(prob, 2))
+        return round(prob, 2)
 
     def calculate_random_flip_heads(self):
         """Function the calculates the probability that a random coin selected
@@ -86,7 +87,7 @@ class Bayes_Coins(CoinsLoadData):
         prob_selecting_A = (self.A_count / self.n)
         prob_selecting_B = 1 - prob_selecting_A
         prob = prob_selecting_A * self.A_prob + prob_selecting_B * self.B_prob
-        return "The probability of a random flip coming up heads is {}".format(round(prob, 2))
+        return round(prob, 2)
 
     def calculate_random_flip_tails(self):
         """Function the calculates the probability that a random coin selected
@@ -100,7 +101,7 @@ class Bayes_Coins(CoinsLoadData):
         prob_selecting_A = (self.A_count / self.n)
         prob_selecting_B = 1 - prob_selecting_A
         prob = prob_selecting_A * (1 - self.A_prob) + prob_selecting_B * (1 - self.B_prob)
-        return "The probability of a random flip coming up tails is {}".format(round(prob, 2))
+        return round(prob, 2)
 
     def create_new_collection(self, As, Bs, A_prob, B_prob):
         """Function that replaces class data set with new data.
@@ -122,8 +123,14 @@ class Bayes_Coins(CoinsLoadData):
         self.n = len(self.data)
         self.A_count = As
         self.B_count = Bs
-        self.A_prob = A_prob
-        self.B_prob = B_prob
+        if A_prob is None:
+            pass
+        else:
+            self.A_prob = A_prob
+        if B_prob is None:
+            pass
+        else:
+            self.B_prob = B_prob
         return "New dataset has {} A coins and {} B coins. The A coins " \
                "have has a {} chance of coming up heads." \
                "The B coins have a {} chance of coming up " \
@@ -139,8 +146,8 @@ class Bayes_Coins(CoinsLoadData):
             string: characteristics of the coin collection.
             """
 
-        return "The coin collection has {} A coins," \
-               "and {} B coins. The A coins have a {}" \
-               "likelihood of coming up heads, and the " \
-               "B coins have a {} likelihood of coming up" \
-               "heads.".format(self.A_count, self.B_count, self.A_prob, self.B_prob)
+        return '''The coin collection has {} A coins
+               and {} B coins. The A coins have a {}
+               likelihood of coming up heads, and the
+               B coins have a {} likelihood of coming up
+               heads.'''.format(self.A_count, self.B_count, self.A_prob, self.B_prob)
