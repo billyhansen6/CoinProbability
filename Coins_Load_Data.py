@@ -1,6 +1,6 @@
 class CoinsLoadData:
 
-    def __init__(self, A_count = 2, B_count = 2):
+    def __init__(self, A_count=2, B_count=2):
         """Generic coin collection for calculating basic probabilities.
 
         Attributes:
@@ -13,6 +13,3 @@ class CoinsLoadData:
         self.B_count = B_count
         self.n = A_count + B_count
         self.data = ['A', 'A', 'B', 'B']
-
-
-
