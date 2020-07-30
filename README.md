@@ -11,23 +11,24 @@ A python package that calculates probabilities of outcomes from a collection of 
 
 - Coins_Load_Data.py: a class that initializes a coin collection.
 - Coins.py: a class that inherits the default coin collection from Coins_Load_Data, replaces
-the collection with user defined coins, and then calculates the liklihood of various outcomes.
+the collection with user defined coins, and then calculates the likelihood of various outcomes.
 - init.py: initializes the Bayes_Coins class.
 - test.py: unit tests to test if the classes are working as expected.
 
 ### How to Interact with this project
 
-The primary scripts are the Generaldistribution.py, Gaussiandistribution.py and
-Binomialdistribution.py. 
-
-To Import this package in python use: <pre><code>pip install sauce_probability
+To install this package in python use: <pre><code>pip install Coin_Probability_Sauce
 </code></pre>
 
-You can find this package on pypi at https://pypi.org/project/sauce-probability/0.1/
+Import the relevant module by using: <pre><code>from Coins_Probability_Sauce import Bayes_Coins
+</code></pre>
 
-The sample text files can be used as sample data for the gaussian and binomial classes.
+You can then create a custom coin collection using the create_new_collection()
+function, and experiment with various probabilities using
+heads_from_both_coins()
+calculate_random_flip_heads()
+calculate_random_flip_tails()
 
-numbers.txt can be used for the Gaussian class, and numbers_binomial.txt for the binomial class.
 
 ### Licensing, Authors, Acknowledgments, etc.
 
