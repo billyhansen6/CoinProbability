@@ -17,7 +17,7 @@ the collection with user defined coins, and then calculates the likelihood of va
 
 ### How to Interact with this project
 
-To install this package in python use: <pre><code>pip install Coin_Probability_Sauce
+To install this package in python use: <pre><code>pip install Coins-Probability-Sauce==0.1
 </code></pre>
 
 Import the relevant module by using: <pre><code>from Coins_Probability_Sauce import Bayes_Coins
